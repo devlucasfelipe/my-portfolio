@@ -1,4 +1,5 @@
 import { Box, Container, Grid, styled, Typography } from "@mui/material";
+import Typewriter from "../../../../components/Typewriter/Typewriter";
 import Avatar from "../../../../assets/images/eubonitao.jfif";
 import DownloadIcon from "@mui/icons-material/Download";
 import EmailIcon from "@mui/icons-material/Email";
@@ -9,9 +10,12 @@ import CV from "../../../../assets/cv/CV-LucasFelipe.pdf";
 const Hero = () => {
   const StyledHero = styled("div")(({ theme }) => ({
     backgroundColor: theme.palette.primary.main,
+    width: "100%",
     height: "100vh",
     display: "flex",
     alignItems: "center",
+    justifyContent: "center",
+
     [theme.breakpoints.up("xs")]: {
       display: "block",
       padding: "20px",
@@ -21,7 +25,7 @@ const Hero = () => {
     [theme.breakpoints.up("md")]: {
       display: "flex",
       alignItens: "center",
-      paddingTop: "0px",
+      paddingTop: "100px",
       height: "100vh",
     },
   }));
@@ -29,6 +33,7 @@ const Hero = () => {
     width: "80%",
     borderRadius: "50%",
     border: `1px solid ${theme.palette.primary.contrastText}`,
+    position: "relative",
   }));
 
   const handleDownload = () => {
@@ -62,11 +67,11 @@ const Hero = () => {
         <Container maxWidth="lg">
           <Grid container spacing={2}>
             <Grid size={{ xs: 12, md: 5 }}>
-              <Box position={"relative"}>
-                <Box position={"absolute"} width={"100%"} top={-100} right={0}>
+              <Box position={"relative"} pb={3}>
+                <Box position={"absolute"} width={"150%"} top={-100} right={0}>
                   <AnimatedBackground />
                 </Box>
-                <Box position={"relative"} textAlign={"center"}>
+                <Box textAlign={"center"}>
                   <StyledImg src={Avatar} />
                 </Box>
               </Box>
@@ -80,41 +85,33 @@ const Hero = () => {
               >
                 Lucas Felipe
               </Typography>
-              <Typography
-                color="primary.contrastText"
+              <Typewriter
+                text="Desenvolvedor Front End"
+                delay={120}
                 variant="h2"
-                textAlign={"center"}
-              >
-                Desenvolvedor Front End
-              </Typography>
-              <Grid
-                container
-                display={"flex"}
-                justifyContent={"center"}
-                spacing={3}
-                pt={3}
-              >
+                color="primary.contrastText"
+              />
+              <Box mt={3}>
                 <Grid
-                  size={{ xs: 12, md: 4 }}
+                  container
                   display={"flex"}
-                  justifyContent="center"
+                  justifyContent={"center"}
+                  spacing={3}
                 >
-                  <StyledButton onClick={() => handleDownload()}>
-                    <DownloadIcon />
-                    <Typography>Download CV</Typography>
-                  </StyledButton>
+                  <Grid size={{ xs: 10, md: 4 }}>
+                    <StyledButton onClick={() => handleDownload()}>
+                      <DownloadIcon />
+                      <Typography>Download CV</Typography>
+                    </StyledButton>
+                  </Grid>
+                  <Grid size={{ xs: 10, md: 4 }}>
+                    <StyledButton onClick={() => handleEmail()}>
+                      <EmailIcon />
+                      <Typography>Contato</Typography>
+                    </StyledButton>
+                  </Grid>
                 </Grid>
-                <Grid
-                  size={{ xs: 12, md: 4 }}
-                  display={"flex"}
-                  justifyContent="center"
-                >
-                  <StyledButton onClick={() => handleEmail()}>
-                    <EmailIcon />
-                    <Typography>Contato</Typography>
-                  </StyledButton>
-                </Grid>
-              </Grid>
+              </Box>
             </Grid>
           </Grid>
         </Container>
