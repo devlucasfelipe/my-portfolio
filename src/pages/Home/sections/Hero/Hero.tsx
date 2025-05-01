@@ -4,6 +4,7 @@ import DownloadIcon from "@mui/icons-material/Download";
 import EmailIcon from "@mui/icons-material/Email";
 import StyledButton from "../../../../components/StyledButton/StyledButton";
 import { AnimatedBackground } from "../../../../components/AnimatedBackground/AnimatedBackground";
+import CV from "../../../../assets/cv/CV-LucasFelipe.pdf";
 
 const Hero = () => {
   const StyledHero = styled("div")(({ theme }) => ({
@@ -12,17 +13,48 @@ const Hero = () => {
     display: "flex",
     alignItems: "center",
     [theme.breakpoints.up("xs")]: {
+      display: "block",
+      padding: "20px",
       paddingTop: "100px",
+      paddingBottom: "40px",
     },
     [theme.breakpoints.up("md")]: {
+      display: "flex",
+      alignItens: "center",
       paddingTop: "0px",
+      height: "100vh",
     },
   }));
   const StyledImg = styled("img")(({ theme }) => ({
-    width: "75%",
+    width: "80%",
     borderRadius: "50%",
     border: `1px solid ${theme.palette.primary.contrastText}`,
   }));
+
+  const handleDownload = () => {
+    console.log("download");
+    // Create a link element
+    const link = document.createElement("a");
+    link.href = CV;
+    link.download = "CV-LucasFelipe.pdf"; // Set the download attribute to specify the file name
+    // Append the link to the body
+    document.body.appendChild(link);
+    // Trigger the click event
+    link.click();
+    // Remove the link from the body
+    document.body.removeChild(link);
+  };
+
+  const handleEmail = () => {
+    const emailAddress = "lukaofelps@gmail.com";
+    const subject = "Subject";
+    const body = "Ola, gostaria de entrar em contato com você.";
+
+    const mailtoLink = `mailto:${emailAddress}?subject=${encodeURIComponent(
+      subject,
+    )}&body=${encodeURIComponent(body)}`;
+    window.open(mailtoLink);
+  };
 
   return (
     <>
@@ -67,7 +99,7 @@ const Hero = () => {
                   display={"flex"}
                   justifyContent="center"
                 >
-                  <StyledButton>
+                  <StyledButton onClick={() => handleDownload()}>
                     <DownloadIcon />
                     <Typography>Download CV</Typography>
                   </StyledButton>
@@ -77,7 +109,7 @@ const Hero = () => {
                   display={"flex"}
                   justifyContent="center"
                 >
-                  <StyledButton>
+                  <StyledButton onClick={() => handleEmail()}>
                     <EmailIcon />
                     <Typography>Contato</Typography>
                   </StyledButton>
