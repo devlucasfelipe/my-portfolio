@@ -13,7 +13,7 @@ const ProjectsSection: React.FC = () => {
     {
       title: "Catalogo de EspaçoNaves",
       subtitle: "Abr 2025 - Abr 2025",
-      srcImg: "/src/assets/images/catalogo-de-espaconaves.png",
+      srcImg: "../../public/images/catalogo-de-espaconaves.png",
       description:
         "Projeto prático desenvolvido como uma SPA e apresenta uma coleção de naves do universo de Star Wars. A página inicial oferece opções para visualizar todas as espaçonaves ou filtrá-las por categorias específicas",
       technologies: "Tecnologias: NextJS, TypeScript",
@@ -23,7 +23,7 @@ const ProjectsSection: React.FC = () => {
     {
       title: "Gestor de Estoque",
       subtitle: "Mar 2025 - Mar 2025",
-      srcImg: "/src/assets/images/gestor-de-estoque.png",
+      srcImg: "../../public/images/gestor-de-estoque.png",
       description: `Dashboard interativo com visualização de métricas de estoque 
 Cadastro e atualização de itens com persistência local 
 Navegação dinâmica sem recarregar a página 
@@ -35,7 +35,7 @@ Uso de hooks personalizados para otimização e modularização .`,
     {
       title: "Biblioteca de Jogos",
       subtitle: "Mar 2025 - Mar 2025",
-      srcImg: "/src/assets/images/biblioteca de jogos.png",
+      srcImg: "../../public/images/biblioteca de jogos.png",
       description:
         "Desenvolvi uma página para gerencia uma coleção de jogos que persiste os dados no localStorage. Principais funcionalidades: useState controlando inputs e função de submit para armazenar jogos e componentização",
       technologies: "Tecnologias: React, JavaScript, CSS",
@@ -45,7 +45,7 @@ Uso de hooks personalizados para otimização e modularização .`,
     {
       title: "OneBixtX",
       subtitle: "Fev 2025 - Fev 2025",
-      srcImg: "/src/assets/images/onebitx.png",
+      srcImg: "../../public/images/onebitx.png",
       description:
         "O objetivo principal é replicar algumas das páginas do renomado site da SpaceX, proporcionando experiência prática em desenvolvimento web",
       technologies:

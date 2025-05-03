@@ -1,11 +1,11 @@
 import { Box, Container, Grid, styled, Typography } from "@mui/material";
 import Typewriter from "../../../../components/Typewriter/Typewriter";
-import Avatar from "../../../../assets/images/eubonitao.jfif";
+import Avatar from "../../../../../public/images/eubonitao.jfif";
 import DownloadIcon from "@mui/icons-material/Download";
 import EmailIcon from "@mui/icons-material/Email";
 import StyledButton from "../../../../components/StyledButton/StyledButton";
 import { AnimatedBackground } from "../../../../components/AnimatedBackground/AnimatedBackground";
-import CV from "../../../../assets/cv/CV-LucasFelipe.pdf";
+import CV from "../../../../assets/cv/LucasFelipe-CV.pdf";
 
 const Hero = () => {
   const StyledHero = styled("div")(({ theme }) => ({
